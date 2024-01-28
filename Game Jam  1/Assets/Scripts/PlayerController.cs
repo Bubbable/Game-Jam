@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private float moveHorizontal;
     private float moveVertical;
-    
+    private bool facingLeft = true;
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -38,6 +38,14 @@ public class PlayerController : MonoBehaviour
         {
             rb2D.AddForce(new Vector2(0f, moveVertical * jumpForce), ForceMode2D.Impulse);
         }
+        if  (moveHorizontal < 0 && !facingLeft)
+        {
+            Flip();
+        }
+        else if (moveHorizontal > 0 && facingLeft)
+        {
+            Flip();
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -52,5 +60,13 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
         }
+    }
+    private void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        facingLeft = !facingLeft;
     }
 }
