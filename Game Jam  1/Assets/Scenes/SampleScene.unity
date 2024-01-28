@@ -1084,7 +1084,6 @@ Transform:
 =======
   m_LocalPosition: {x: -3.75, y: -0.47, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 1}
->>>>>>> 2cc329095489e8546dcb2b4cd40a31fecb4b22e2
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
