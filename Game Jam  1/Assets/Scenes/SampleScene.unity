@@ -1073,6 +1073,7 @@ Transform:
   m_GameObject: {fileID: 429430376}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0.96, y: 0.49, z: 0}
 <<<<<<< HEAD
   m_LocalScale: {x: 0.01, y: 0.01, z: 1}
@@ -1080,6 +1081,10 @@ Transform:
 =======
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
 >>>>>>> parent of eee0776 (deez)
+=======
+  m_LocalPosition: {x: -3.75, y: -0.47, z: 0}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 1}
+>>>>>>> 2cc329095489e8546dcb2b4cd40a31fecb4b22e2
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
