@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
     private bool facingLeft = true;
+    public Text WINTEXT;
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -53,12 +56,24 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+        //if (collision.gameObject.tag == "Win")
+        //{
+        //    WINTEXT.gameObject.SetActive(true);
+        //}
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Platform")
         {
             isJumping = true;
+        }
+    }
+
+    private void endLevel(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Win")
+        {
+            SceneManager.LoadScene("YouWin");
         }
     }
     private void Flip()
